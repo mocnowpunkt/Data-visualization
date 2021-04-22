@@ -23,7 +23,7 @@ for repo_dict in repo_dicts:
     
     description = repo_dict['description']
     owner = repo_dict['owner']['login']
-    label = f"{owner}<br/> {description}"
+    label = f"{owner}<br /> {description}"
     labels.append(label)
 
 # Make a visualization
