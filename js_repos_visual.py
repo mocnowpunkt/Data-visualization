@@ -1,8 +1,10 @@
+import streamlit as st
 import requests
 
 from plotly.graph_objs import Bar, Layout
 from plotly import offline
 
+st.title('testing streamlit')
 # Make an API call and store the response
 url = 'https://api.github.com/search/repositories?q=language:javascript&sort=stars'
 headers = {'Accept': 'application/vnd.github.v3+json'}
@@ -55,4 +57,6 @@ my_layout = {
 
 fig = {'data': data, 'layout': my_layout}
 
-offline.plot(fig, filename='data_visualization/plots/js_repos.html')
+# offline.plot(fig, filename='data_visualization/plots/js_repos.html')
+
+st.plotly_chart(fig)
