@@ -4,7 +4,7 @@ import requests
 from plotly.graph_objs import Bar, Layout
 from plotly import offline
 
-st.title('testing streamlit')
+st.title('')
 # Make an API call and store the response
 url = 'https://api.github.com/search/repositories?q=language:javascript&sort=stars'
 headers = {'Accept': 'application/vnd.github.v3+json'}
@@ -17,7 +17,7 @@ repo_dicts = response_dict['items']
 repo_links, stars, labels, forks = [], [], [], []
 for repo_dict in repo_dicts:
     repo_name = repo_dict['name']    
-    repo_url = repo_dict['owner']['url']
+    repo_url = repo_dict['html_url']
     repo_link = f"<a href='{repo_url}'> {repo_name}</a>"
     repo_links.append(repo_link)
     forks.append(repo_dict['forks'])
